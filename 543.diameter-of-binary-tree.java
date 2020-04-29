@@ -15,22 +15,60 @@
  * }
  */
 class Solution {
-    private int max = 0;
-    public int diameterOfBinaryTree(TreeNode root) {
-        if(root == null) return 0;
-        helper(root);
-        return max;
-    }
-    private int helper(TreeNode root) {
+    // private int max = 0;
+    // public int diameterOfBinaryTree(TreeNode root) {
+    //     if(root == null) return 0;
+    //     helper(root);
+    //     return max;
+    // }
+    // private int helper(TreeNode root) {
         
-        if(root == null) return 0;
-        int left = helper(root.left);
-        int right = helper(root.right);
-        max = Math.max(max, left+ right); // compare the current path to all other subtrees in the tree
-        return Math.max(left, right)+1;
+    //     if(root == null) return 0;
+    //     int left = helper(root.left);
+    //     int right = helper(root.right);
+    //     max = Math.max(max, left+ right); // compare the current path to all other subtrees in the tree
+    //     return Math.max(left, right)+1;
         
 
         
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    int max = 0;
+    public int diameterOfBinaryTree(TreeNode root) {
+        if(root == null) return 0;
+        helper(root);
+        return max; 
+    }
+    private int helper(TreeNode root) {
+        if(root == null) return 0;
+        int left = helper(root.left);
+        int right = helper(root.right);
+        max =Math.max(max, left+ right);
+        return 1+ Math.max(left,right); // The return statement only keep track of the height of a node.
     }
 }
 // @lc code=end
